@@ -1,3 +1,14 @@
+.header-section {
+    background-color:mediumpurple;
+    padding: 40px;
+    text-align: center;
+}
+#meal-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
 #meal-container img {
     width: 100%;
     border-radius: 10px;
@@ -7,5 +18,21 @@
     width: 250px;
     background: #f7f7f7;
     padding: 20px;
+    border-radius: 10px;
+}
+#meal-ingredients {
+    display: none;
+}
+.ingredients-container{
+    text-align: left;
+    width: 400px;
+    background-color: mistyrose;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.ingredients-container img {
+    width: 100%;
     border-radius: 10px;
 }

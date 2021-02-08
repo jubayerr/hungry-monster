@@ -32,15 +32,20 @@ const searchBtn = document.getElementById('search-button').addEventListener('cli
 
 
                             const ingredientsInfo = `
-                            <h3>${data.meals[0].strIngredient1}</h3>
-                            <h3>${data.meals[0].strIngredient2}</h3>
-                            <h3>${data.meals[0].strIngredient3}</h3>
-                            <h3>${data.meals[0].strIngredient4}</h3>
+                            <img src="${data.meals[0].strMealThumb}">
+                            <h2>${data.meals[0].strMeal}</h2>
+                            <h3>Ingredients</h3>
+                            <p><b><span>&#10003;</span></b> ${data.meals[0].strIngredient1}</p>
+                            <p><b><span>&#10003;</span></b> ${data.meals[0].strIngredient2}</p>
+                            <p><b><span>&#10003;</span></b> ${data.meals[0].strIngredient3}</p>
+                            <p><b><span>&#10003;</span></b> ${data.meals[0].strIngredient4}</p>
                             `
 
                             inDiv.innerHTML = ingredientsInfo
                             mealIngredients.appendChild(inDiv)
 
+                            mealIngredients.style.display = 'block'
+                            mealContainer.style.display = 'none'
 
 
                         })
