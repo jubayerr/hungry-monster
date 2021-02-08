@@ -1,5 +1,3 @@
-// const item = 'Arrabiata'
-
 const searchBtn = document.getElementById('search-button').addEventListener('click', function () {
     const searchInput = document.getElementById('search-input').value;
     const item = searchInput;
@@ -20,7 +18,9 @@ const searchBtn = document.getElementById('search-button').addEventListener('cli
                 mealDiv.innerHTML = mealItems
 
                 mealContainer.appendChild(mealDiv)
-                // Ingredieants 
+
+                // Meal Ingredieants 
+
                 mealDiv.addEventListener('click', function () {
                     const idMeal = data.meals[0].idMeal
                     const urlIngredient = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + idMeal
@@ -35,10 +35,12 @@ const searchBtn = document.getElementById('search-button').addEventListener('cli
                             <img src="${data.meals[0].strMealThumb}">
                             <h2>${data.meals[0].strMeal}</h2>
                             <h3>Ingredients</h3>
-                            <p><b><span>&#10003;</span></b> ${data.meals[0].strIngredient1}</p>
-                            <p><b><span>&#10003;</span></b> ${data.meals[0].strIngredient2}</p>
-                            <p><b><span>&#10003;</span></b> ${data.meals[0].strIngredient3}</p>
-                            <p><b><span>&#10003;</span></b> ${data.meals[0].strIngredient4}</p>
+                            <p> <b><span>&#10003;</span></b> ${data.meals[0].strMeasure1} ${data.meals[0].strIngredient1}</p>
+                            <p> <b><span>&#10003;</span></b> ${data.meals[0].strMeasure2} ${data.meals[0].strIngredient2}</p>
+                            <p> <b><span>&#10003;</span></b> ${data.meals[0].strMeasure3} ${data.meals[0].strIngredient3}</p>
+                            <p> <b><span>&#10003;</span></b> ${data.meals[0].strMeasure4} ${data.meals[0].strIngredient4}</p>
+                            <p> <b><span>&#10003;</span></b> ${data.meals[0].strMeasure5} ${data.meals[0].strIngredient5}</p>
+                            <p> <b><span>&#10003;</span></b> ${data.meals[0].strMeasure6} ${data.meals[0].strIngredient6}</p>
                             `
 
                             inDiv.innerHTML = ingredientsInfo
@@ -52,6 +54,31 @@ const searchBtn = document.getElementById('search-button').addEventListener('cli
                 })
             })
     }
+    if (searchInput == '') {
+        const mealContainer = document.getElementById('meal-container');
+        mealContainer.style.display = 'none'
+        const contentNotFound = document.getElementById('content-not-found');
+        contentNotFound.style.display = 'block'
+        const contentNotFoundDiv = document.createElement('div')
+        contentNotFoundDiv.className = 'content-not-found'
+
+        const contentNotFoundInfo = `
+        <h2>Item Not Found</h2>
+        <p>Please Try This Menu List: </p>
+        <ul>
+        <li>Chicken</li>
+        <li>Beef</li>
+        <li>Mustard</li>
+        <li>Salad</li>
+        <li>& Many more</li>
+        </ul>
+        `
+
+        contentNotFoundDiv.innerHTML = contentNotFoundInfo
+        contentNotFound.appendChild(contentNotFoundDiv)
+    }
+
+
 })
 
 

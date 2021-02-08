@@ -7,19 +7,22 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+    padding: 20px;
 }
 
 #meal-container img {
     width: 100%;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .meal-items {
+    text-align: center;
     width: 250px;
     background: #f7f7f7;
-    padding: 20px;
     border-radius: 10px;
 }
+
 #meal-ingredients {
     display: none;
 }
@@ -36,3 +39,13 @@
     width: 100%;
     border-radius: 10px;
 }
+
+.content-not-found {
+    color: honeydew;
+    width: 500px;
+    background-color: mediumorchid;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
