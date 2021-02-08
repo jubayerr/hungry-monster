@@ -8,33 +8,32 @@ const searchBtn = document.getElementById('search-button').addEventListener('cli
             .then(response => response.json())
             .then(data => {
                 const mealContainer = document.getElementById('meal-container');
-                const mealDiv = document.createElement('div')
-                mealDiv.className = 'meal-items'
+                const mealDiv = document.createElement('div');
+                mealDiv.className = 'meal-items';
 
                 const mealItems = `
                 <img src="${data.meals[0].strMealThumb}">
                 <h3>${data.meals[0].strMeal}</h3>
                 `
-                mealDiv.innerHTML = mealItems
-
-                mealContainer.appendChild(mealDiv)
+                mealDiv.innerHTML = mealItems;
+                mealContainer.appendChild(mealDiv);
 
                 // Meal Ingredieants 
 
                 mealDiv.addEventListener('click', function () {
                     const idMeal = data.meals[0].idMeal
-                    const urlIngredient = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + idMeal
+                    const urlIngredient = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + idMeal;
                     fetch(urlIngredient)
                         .then(response => response.json())
                         .then(data => {
                             const mealIngredients = document.getElementById('meal-ingredients');
-                            const inDiv = document.createElement('div')
-
+                            mealIngredients.className = 'ingredients-container';
+                            const inDiv = document.createElement('div');
 
                             const ingredientsInfo = `
                             <img src="${data.meals[0].strMealThumb}">
                             <h2>${data.meals[0].strMeal}</h2>
-                            <h3>Ingredients</h3>
+                            <h4>Ingredients</h4>
                             <p> <b><span>&#10003;</span></b> ${data.meals[0].strMeasure1} ${data.meals[0].strIngredient1}</p>
                             <p> <b><span>&#10003;</span></b> ${data.meals[0].strMeasure2} ${data.meals[0].strIngredient2}</p>
                             <p> <b><span>&#10003;</span></b> ${data.meals[0].strMeasure3} ${data.meals[0].strIngredient3}</p>
@@ -43,12 +42,11 @@ const searchBtn = document.getElementById('search-button').addEventListener('cli
                             <p> <b><span>&#10003;</span></b> ${data.meals[0].strMeasure6} ${data.meals[0].strIngredient6}</p>
                             `
 
-                            inDiv.innerHTML = ingredientsInfo
-                            mealIngredients.appendChild(inDiv)
+                            inDiv.innerHTML = ingredientsInfo;
+                            mealIngredients.appendChild(inDiv);
 
-                            mealIngredients.style.display = 'block'
-                            mealContainer.style.display = 'none'
-
+                            mealIngredients.style.display = 'block';
+                            mealContainer.style.display = 'none';
 
                         })
                 })
@@ -56,11 +54,11 @@ const searchBtn = document.getElementById('search-button').addEventListener('cli
     }
     if (searchInput == '') {
         const mealContainer = document.getElementById('meal-container');
-        mealContainer.style.display = 'none'
+        mealContainer.style.display = 'none';
         const contentNotFound = document.getElementById('content-not-found');
-        contentNotFound.style.display = 'block'
-        const contentNotFoundDiv = document.createElement('div')
-        contentNotFoundDiv.className = 'content-not-found'
+        contentNotFound.style.display = 'block';
+        const contentNotFoundDiv = document.createElement('div');
+        contentNotFoundDiv.className = 'content-not-found';
 
         const contentNotFoundInfo = `
         <h2>Item Not Found</h2>
@@ -73,11 +71,8 @@ const searchBtn = document.getElementById('search-button').addEventListener('cli
         <li>& Many more</li>
         </ul>
         `
-
-        contentNotFoundDiv.innerHTML = contentNotFoundInfo
-        contentNotFound.appendChild(contentNotFoundDiv)
-
+        contentNotFoundDiv.innerHTML = contentNotFoundInfo;
+        contentNotFound.appendChild(contentNotFoundDiv);
     }
-    document.getElementById('search-input').value = ''
-
+    document.getElementById('search-input').value = '';
 })

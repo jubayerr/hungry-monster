@@ -1,45 +1,50 @@
 .header-section {
-    background-color:mediumpurple;
+    background: linear-gradient(to right, mediumslateblue, mediumspringgreen);
     padding: 40px;
     text-align: center;
 }
+.header-section input {
+    width: 40%;
+    display: inline;
+}
+.header-section button {
+    width: 15%;
+    display: inline;
+    margin-top: -5px;
+}
 #meal-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     padding: 20px;
 }
-
 #meal-container img {
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-
 .meal-items {
     text-align: center;
     width: 250px;
     background: #f7f7f7;
     border-radius: 10px;
 }
-
 #meal-ingredients {
     display: none;
 }
 .ingredients-container{
     text-align: left;
-    width: 400px;
+    width: 50%;
     background-color: mistyrose;
     margin: 20px auto;
     border-radius: 10px;
     padding: 10px;
 }
-
 .ingredients-container img {
     width: 100%;
     border-radius: 10px;
+    
 }
-
 .content-not-found {
     color: honeydew;
     width: 500px;
@@ -48,4 +53,3 @@
     margin: 20px auto;
     border-radius: 10px;
 }
-
