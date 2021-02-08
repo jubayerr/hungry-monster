@@ -76,12 +76,8 @@ const searchBtn = document.getElementById('search-button').addEventListener('cli
 
         contentNotFoundDiv.innerHTML = contentNotFoundInfo
         contentNotFound.appendChild(contentNotFoundDiv)
-    }
 
+    }
+    document.getElementById('search-input').value = ''
 
 })
-
-
-
-
-
